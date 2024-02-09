@@ -1,6 +1,6 @@
-Base Image with ksh and iconv (with TIS-620 support)
+# Base Image with ksh and iconv (with TIS-620 support)
 
-# Prepare gconv-modules.cache
+## Prepare gconv-modules.cache
 
 เตรียม gconv-modules.cache
 NOTE: อันนีต้องทำในเครื่อง Linux หรือ Docker ของตระกูล CentOS มารัน เพื่อ Build
@@ -23,11 +23,11 @@ module  INTERNAL                TIS-620//               TIS-620         1
 4. save และใช้ iconvconfig build cache ขึ้นมา gconv-modules.cache ที่ path /usr/lib64/gconv/gconv-modules
 5. iconv -l | grep TIS
 
-# Build Image By Jenkins
+## Build Image By Jenkins
 
 1. create Jenkins Job from Jenkinsfile
 
-# Build Image By Command
+## Build Image By Command
 
 1. Build 1.0.0 คือ Tag ถ้ามีแก้ Base Image ค้องขยับ Tag ด้วย
 
