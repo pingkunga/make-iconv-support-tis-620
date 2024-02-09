@@ -1,0 +1,20 @@
+FROM almalinux:8.4
+
+#Update Timezone
+ENV TZ=Asia/Bangkok
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+## Packages
+### SHELL
+### Clear command(ncurses): ncurses-6.1
+### Package for db2: binutils-2.30 kernel-devel-4.18.0 patch-2.7.6 libaio-0.3.112 numactl-2.0.12
+### Openssh openssh-server-8.0p1 openssh-clients-8.0p1
+### JAVA: java-17-openjdk java-17-openjdk-devel 
+### -Ref: https://access.redhat.com/documentation/en-us/openjdk/17/html-single/installing_and_using_openjdk_17_on_rhel/index
+#RUN yum install -y ksh-20120801 ncurses-6.1 binutils-2.30 kernel-devel-4.18.0 patch-2.7.6 libaio-0.3.112 numactl-2.0.12 openssh-server-8.0p1 openssh-clients-8.0p1 java-17-openjdk java-17-openjdk-devel; systemctl start sshd; systemctl enable sshd; yum clean all
+RUN yum install -y ksh-20120801 ncurses-6.1 binutils-2.30 kernel-devel-4.18.0 patch-2.7.6 libaio-0.3.112 numactl-2.0.12 openssh-clients-8.0p1 java-17-openjdk java-17-openjdk-devel; yum clean all
+
+### Update iconv for knowing tis620 encoding
+COPY gconv-modules.cache /usr/lib64/gconv
+COPY TIS-620.so /usr/lib64/gconv
+
