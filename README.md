@@ -1,5 +1,7 @@
 # Base Image with ksh and iconv (with TIS-620 support)
 
+**Blog Version:** https://naiwaen.debuggingsoft.com/2023/07/make-iconv-support-tis-620/
+
 ## Prepare gconv-modules.cache
 
 เตรียม gconv-modules.cache
