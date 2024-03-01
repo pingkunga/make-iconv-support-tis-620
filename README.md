@@ -5,7 +5,7 @@
 ## Prepare gconv-modules.cache
 
 เตรียม gconv-modules.cache
-NOTE: อันนีต้องทำในเครื่อง Linux หรือ Docker ของตระกูล CentOS มารัน เพื่อ Build
+NOTE: อันนีต้องทำในเครื่อง Linux หรือ Docker ของตระกูล CentOS มารัน เพื่อ Build ทดสอบ
 
 1. เอา TIS-620.so โยนไปใน /usr/lib64/gconv
 2. vi แก้ไฟล์ /usr/lib64/gconv/gconv-modules
